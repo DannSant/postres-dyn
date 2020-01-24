@@ -1,0 +1,50 @@
+<header role="banner">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" [ngClass]="{'dark-bg': darkbg == true}">
+      <div class="container">
+        <a class="navbar-brand" routerLink="/">Postres Dyn</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample05">
+          <ul class="navbar-nav ml-auto pl-lg-5 pl-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:
+                true}" routerLink="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/products">Productos</a>
+            </li>
+            
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="/about">Acerca de</a>
+            </li>
+
+            <li class="nav-item">
+              
+                <a *ngIf="authService.currentUser==null" class="nav-link" routerLinkActive="active" routerLink="/login">Iniciar sesion</a>
+                <a *ngIf="authService.currentUser!=null" class="nav-link" routerLinkActive="active" routerLink="/profile">
+                  <i class="fas fa-user"></i>
+                  {{authService.currentUser.name}}
+                </a>
+            </li>
+
+            <li *ngIf="authService.currentUser!=null" class="nav-item">
+              <a style="cursor: pointer;" class="nav-link" (click)="authService.logout()">Cerrar Sesión</a>
+            </li>
+            
+          </ul>
+
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item cta-btn">
+              <a class="nav-link" routerLink="/order">Ordena!</a>
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- END header -->
+
+  <div class="slider-item" style="background-image: url('assets/img/productos_banner.jpg');"></div>

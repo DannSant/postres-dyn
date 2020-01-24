@@ -1,0 +1,59 @@
+<section class="section  pt-5 top-slant-white2 relative-higher bottom-slant-gray">
+   
+    <div class="container">
+    <h2>Inicia Sesión</h2>
+      <div class="row">
+        <div class="col-lg-6">
+          <form [formGroup]="authForm" (ngSubmit)="login()">
+            
+            
+            <div class="row">
+              <div class="col-md-12 form-group" [ngClass]="{'has-error': authForm.controls.email.invalid && submited}">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" formControlName="email" class="form-control ">
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-12 form-group" [ngClass]="{'has-error': (authForm.controls.password.invalid && submited) || passwordWrong}">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" formControlName="password" class="form-control ">
+              </div>
+          </div>
+            
+            <div class="row">
+              <div class="col-md-6 form-group">
+                <input type="submit" value="Iniciar sesión" class="btn btn-primary">
+              </div>
+            </div>
+            Si no tienes cuenta, <a routerLink='/signup'>Registrate</a>
+          </form>
+        </div>
+        
+        <div class="col-lg-6 pl-2 pl-lg-5">
+
+          <div class="col-md-8 mx-auto contact-form-contact-info">
+            <h4 class="mb-5" class="contact">Servicio</h4>
+              <p class="d-flex">
+                <span class="ion-ios-location icon mr-5"></span>
+                <span>Entregas en puntos especificos del metro de la CDMX</span>
+              </p>
+
+              <p class="d-flex">
+                <span class="ion-ios-telephone icon mr-5"></span>
+                <span>Más información 5512341234</span>
+              </p>
+
+              <p class="d-flex">
+                <span class="ion-android-mail icon mr-5"></span>
+                <span>informacion@dynpostres.com</span>
+              </p>
+            </div>
+
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  
